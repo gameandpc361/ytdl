@@ -7,5 +7,6 @@ jobs:
           - name: requied
             run: sudo apt install yt-dlp
           - name: download
-            run: yt-dlp --version
+            run: yt-dlp --update
+                 yt-dlp --version
         
