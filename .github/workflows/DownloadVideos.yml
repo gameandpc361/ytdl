@@ -1,1 +1,12 @@
-
+on: workflow_dispatch
+jobs: 
+  download: 
+        name: run
+        runs-on: ubuntu-latest
+        steps:
+          - name: requied
+            run: curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+                 chmod a+rx ~/.local/bin/yt-dlp
+          - name: download
+            run: yt-dlp --version
+        
