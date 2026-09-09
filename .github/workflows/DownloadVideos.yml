@@ -8,9 +8,11 @@ jobs:
         steps:
           - name: requied
             run: | 
+                 mkdir -p ~/.local/bin
                  curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
                  chmod a+rx ~/.local/bin/yt-dlp
           - name: download
-            run: yt-dlp --update
+            run: | 
+                 yt-dlp --update
                  yt-dlp --version
         
