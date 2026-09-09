@@ -7,8 +7,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: requied
-            run: sudo curl -L https://www.github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /local/bin/yt-dlp
-                 sudo chmod a+rx /local/bin/yt-dlp
+            run: curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+                 chmod a+rx ~/.local/bin/yt-dlp
           - name: download
             run: yt-dlp --update
                  yt-dlp --version
