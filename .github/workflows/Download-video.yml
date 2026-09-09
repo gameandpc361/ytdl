@@ -8,5 +8,5 @@ jobs:
    runs-on: ubuntu-latest
    steps: 
     - name: Reqfile
-      run: File/yt-dlp
+      run: File/yt-dlp -v
      
