@@ -1,4 +1,4 @@
-name: YouTubeVideoDownloader in GithubActions
+name: YouTubeVideoDownloader
 
 on: workflow_dispatch
 jobs: 
