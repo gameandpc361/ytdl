@@ -16,4 +16,6 @@ jobs:
                  yt-dlp --update
                  yt-dlp --version
                  yt-dlp https://www.youtube.com/watch?v=nZMCCcYayMc
-          - name:
+          - name: export
+            run: | 
+                yt-dlp filepath
