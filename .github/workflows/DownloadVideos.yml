@@ -15,7 +15,12 @@ jobs:
             run: | 
                  yt-dlp --update
                  yt-dlp --version
-                 yt-dlp https://www.youtube.com/watch?v=nZMCCcYayMc
-          - name: export
+                 yt-dlp -p /home/yt-dlp-savepoint/ -o savevideo https://www.youtube.com/watch?v=nZMCCcYayMc
+          - name: check
             run: | 
-                yt-dlp filepath
+                yt-dlp --filepath
+          - name: archive
+            uses: actions/upload-artifact@v4
+            with: 
+                  name: archivefile
+                  path: home/yt-dlp-savepoint/savevideo.mp4
