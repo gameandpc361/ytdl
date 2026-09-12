@@ -10,9 +10,16 @@ jobs:
             env: 
                  YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
             run: | 
+                 #Install deno
+                 curl -fsSL https://deno.land/install.sh | sh
+                 deno --version
+                 
+                 #Install yt-dlp
                  mkdir -p ~/.local/bin
                  curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
                  chmod a+rx ~/.local/bin/yt-dlp
+                 
+                 #setup youtube cookies
                  mkdir -p /$GITHUB_WORKSPACE/yt-dlp-authinfo
                  printf '%s\n' "$YOUTUBE_COOKIES" > /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
                  
