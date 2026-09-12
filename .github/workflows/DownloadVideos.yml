@@ -23,6 +23,7 @@ jobs:
           - name: check
             run: | 
                 yt-dlp --filepath
+                rm -f /home/yt-dlp-authinfo/youtube-cookies.txt
           - name: archive
             uses: actions/upload-artifact@v4
             with: 
