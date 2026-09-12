@@ -12,7 +12,6 @@ jobs:
             run: | 
                  #Install deno
                  curl -fsSL https://deno.land/install.sh | sh
-                 deno --version
                  
                  #Install yt-dlp
                  mkdir -p ~/.local/bin
@@ -25,6 +24,7 @@ jobs:
                  
           - name: download
             run: | 
+                 deno --version
                  yt-dlp --update
                  yt-dlp --version
                  yt-dlp --verbose -P /$GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
