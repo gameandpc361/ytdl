@@ -29,9 +29,8 @@ jobs:
                  yt-dlp --update
                  yt-dlp --version
                  yt-dlp --verbose -P /$GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
-          - name: check
+          - name: after
             run: | 
-                yt-dlp --filepath
                 rm -f /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
           - name: archive
             uses: actions/upload-artifact@v4
