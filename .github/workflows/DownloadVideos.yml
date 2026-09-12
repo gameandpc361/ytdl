@@ -12,6 +12,7 @@ jobs:
             run: | 
                  #Install deno
                  curl -fsSL https://deno.land/install.sh | sh
+                 echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
                  
                  #Install yt-dlp
                  mkdir -p ~/.local/bin
