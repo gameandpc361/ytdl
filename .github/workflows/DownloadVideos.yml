@@ -13,23 +13,23 @@ jobs:
                  mkdir -p ~/.local/bin
                  curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
                  chmod a+rx ~/.local/bin/yt-dlp
-                 mkdir -p /home/yt-dlp-authinfo
-                 printf '%s\n' '$YOUTUBE_COOKIES' > /home/yt-dlp-authinfo/youtube-cookies.txt
+                 mkdir -p /yt-dlp-authinfo
+                 printf '%s\n' '$YOUTUBE_COOKIES' > /yt-dlp-authinfo/youtube-cookies.txt
                  
           - name: download
             run: | 
                  yt-dlp --update
                  yt-dlp --version
-                 yt-dlp -P /home/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies /home/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
+                 yt-dlp -P /yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies /yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
           - name: check
             run: | 
                 yt-dlp --filepath
-                rm -f /home/yt-dlp-authinfo/youtube-cookies.txt
+                rm -f /yt-dlp-authinfo/youtube-cookies.txt
           - name: archive
             uses: actions/upload-artifact@v4
             with: 
                   name: archivefile
-                  path: home/yt-dlp-savepoint/savevideo.mp4
+                  path: /yt-dlp-savepoint/savevideo.mp4
 
 
 
