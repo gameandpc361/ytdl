@@ -14,7 +14,7 @@ jobs:
                  curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
                  chmod a+rx ~/.local/bin/yt-dlp
                  mkdir -p /$GITHUB_WORKSPACE/yt-dlp-authinfo
-                 printf '%s\n' '$YOUTUBE_COOKIES' > /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
+                 printf '%s\n' "$YOUTUBE_COOKIES" > /$GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
                  
           - name: download
             run: | 
