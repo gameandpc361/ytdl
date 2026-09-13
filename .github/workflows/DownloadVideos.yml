@@ -28,7 +28,7 @@ jobs:
                  deno --version
                  yt-dlp --update
                  yt-dlp --version
-                 yt-dlp --verbose -f bv*[vcodec=avc1]+ba[acodec=mp4a]/b -P $GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
+                 yt-dlp --verbose -f "bv*[vcodec=avc1]+ba[acodec=mp4a]/b" -P $GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
           - name: after
             run: | 
                 rm -f $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
