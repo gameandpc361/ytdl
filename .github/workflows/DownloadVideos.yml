@@ -29,7 +29,7 @@ jobs:
                  
           - name: download
             run: | 
-                 ffmpeg --version
+                 ffmpeg -version
                  deno --version
                  yt-dlp --update
                  yt-dlp --version
