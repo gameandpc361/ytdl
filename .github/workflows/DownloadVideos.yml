@@ -18,6 +18,10 @@ jobs:
                  mkdir -p ~/.local/bin
                  curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
                  chmod a+rx ~/.local/bin/yt-dlp
+
+                 #Install FFmpeg
+                 sudo apt update
+                 sudo apt -y install ffmpeg
                  
                  #setup youtube cookies
                  mkdir -p $GITHUB_WORKSPACE/yt-dlp-authinfo
