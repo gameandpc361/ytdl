@@ -36,14 +36,15 @@ jobs:
                  yt-dlp --verbose -f "bv*+ba/b" -P $GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "https://www.youtube.com/watch?v=nZMCCcYayMc"
           - name: after
             run: | 
-                ffmpeg -i "$GITHUB_WORKSPACE/yt-dlp-savepoint/source.webm" \
+                input=$(find "$GITHUB_WORKSPACE/yt-dlp-savepoint" -maxdepth 1 -type f -name 'savevideo.*' | head -n 1)
+                ffmpeg -i "$input" \
                 -c:v libx264 \
                 -preset medium \
                 -crf 18 \
                 -c:a aac \
                 -b:a 192k \
                 -movflags +faststart \
-                "$GITHUB_WORKSPACE/yt-dlp-savepoint/savevideo.mp4"
+                "$GITHUB_WORKSPACE/yt-dlp-savepoint/output_video.mp4"
                 rm -f $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt
           - name: archive
             uses: actions/upload-artifact@v4
