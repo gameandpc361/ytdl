@@ -39,7 +39,7 @@ jobs:
                  deno --version
                  yt-dlp --update
                  yt-dlp --version
-                 yt-dlp --verbose -f "bv*+ba/b" -P $GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt '{{ github.events.input.URL }}'
+                 yt-dlp --verbose -f "bv*+ba/b" -P $GITHUB_WORKSPACE/yt-dlp-savepoint/ -o "savevideo.%(ext)s" --cookies $GITHUB_WORKSPACE/yt-dlp-authinfo/youtube-cookies.txt "{{ github.event.input.URL }}"
           - name: after
             run: | 
                 input=$(find "$GITHUB_WORKSPACE/yt-dlp-savepoint" -maxdepth 1 -type f -name 'savevideo.*' | head -n 1)
