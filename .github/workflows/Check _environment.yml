@@ -14,7 +14,9 @@ jobs:
         steps:
           - name: check
             run: | 
-                 lspci
+                 lspci | grep -Ei 'VGA|3D controller|Display controller'
+                 lspci -nn
+                 nvidia-smi
 
 
 
