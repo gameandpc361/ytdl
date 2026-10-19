@@ -1,4 +1,4 @@
-name: YouTubeVideoDownloader
+name: Check_env
 
 on: 
  workflow_dispatch:
