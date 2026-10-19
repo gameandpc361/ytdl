@@ -12,9 +12,7 @@ jobs:
         name: run
         runs-on: ubuntu-latest
         steps:
-          - name: requied
-            env: 
-                 YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          - name: check
             run: | 
                  lspci
 
