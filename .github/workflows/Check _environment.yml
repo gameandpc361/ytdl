@@ -1,0 +1,24 @@
+name: YouTubeVideoDownloader
+
+on: 
+ workflow_dispatch:
+   inputs:
+     URL: 
+       description: 'hoge'
+       type: string
+       required: false
+jobs: 
+  download: 
+        name: run
+        runs-on: ubuntu-latest
+        steps:
+          - name: requied
+            env: 
+                 YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+            run: | 
+                 lspci
+
+
+
+
+    #><<<}}|~<$€%>$h hydroelectricities gfgggshsbsbdbshshsjsjejdjdksksksksksksksjsjssjskskksksksskksskksskksksskskskshjshsgsgsghsnwnnannajanwnwnwsdjdjdkdjeijdiiejeejejekjjdjdjfjrkrirjrkrkrjfjdjfheheheuueieiririrurjehdjejejejjedjdjdknffnfjdydydjdjjdjdjdjdjdjjdjdjddjjdjdjdjjdkd
